@@ -30,7 +30,9 @@ namespace SistemaInventario.AccesoDatos.Repositorio
           return  await dbSet.FindAsync(id);  //select * from (solo por id)
         }
 
-        public async Task<IEnumerable<T>> ObtenerTodos(Expression<Func<T, bool>> filtro = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string incluirPropiedades = null, bool isTracking = true)
+        public async Task<IEnumerable<T>> ObtenerTodos(Expression<Func<T, bool>> filtro = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, 
+            string incluirPropiedades = null, bool isTracking = true)
         {
             IQueryable<T> query = dbSet;
             if (filtro != null)
